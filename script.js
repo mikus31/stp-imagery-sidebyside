@@ -28,8 +28,8 @@ L.Control.geocoder({
     , placeholder: 'Search for an address...'
     , defaultMarkGeocode: false
     , geocoder: L.Control.Geocoder.mapbox({
-            apiKey: 'pk.eyJ1IjoibWlrdXMzMSIsImEiOiJjbGhqOThybGswZmpmM3Jxa2gyMXF2ajNuIn0.utJJYELL90COk70CA_YQPg'
-        }) // Replace with your own Mapbox API key
+        apiKey: 'pk.eyJ1IjoibWlrdXMzMSIsImEiOiJjbGhqOThybGswZmpmM3Jxa2gyMXF2ajNuIn0.utJJYELL90COk70CA_YQPg' // Replace with your own Mapbox API key
+    })
 }).on('markgeocode', function (e) {
     var latlng = e.geocode.center;
     map.setView(latlng, 30);
