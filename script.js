@@ -31,4 +31,33 @@ var geocoder = L.Control.geocoder({
     map.setView(latlng, 18);
 });
 geocoder.addTo(map);
-// Create a custom control with the text box
+// Create the pan buttons
+var panButtons = document.createElement('div');
+panButtons.className = 'pan-buttons';
+// Create the pan button elements
+var panUpButton = document.createElement('button');
+panUpButton.innerHTML = '↑';
+panUpButton.addEventListener('click', function () {
+    map.panBy([0, -100]); // Pan the map up by 100 pixels
+});
+var panDownButton = document.createElement('button');
+panDownButton.innerHTML = '↓';
+panDownButton.addEventListener('click', function () {
+    map.panBy([0, 100]); // Pan the map down by 100 pixels
+});
+var panLeftButton = document.createElement('button');
+panLeftButton.innerHTML = '←';
+panLeftButton.addEventListener('click', function () {
+    map.panBy([-100, 0]); // Pan the map left by 100 pixels
+});
+var panRightButton = document.createElement('button');
+panRightButton.innerHTML = '→';
+panRightButton.addEventListener('click', function () {
+    map.panBy([100, 0]); // Pan the map right by 100 pixels
+});
+// Append the pan buttons to the map container
+panButtons.appendChild(panUpButton);
+panButtons.appendChild(panDownButton);
+panButtons.appendChild(panLeftButton);
+panButtons.appendChild(panRightButton);
+document.getElementById('map').appendChild(panButtons);
