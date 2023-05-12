@@ -40,28 +40,28 @@ panUpButton.innerHTML = '<i class="material-icons">arrow_upward</i>';
 panUpButton.title = 'Pan Up';
 panUpButton.className = 'pan-button'; // Add a class for styling
 panUpButton.addEventListener('click', function () {
-    map.panBy([0, -100]); // Pan the map up by 100 pixels
+    map.panBy([0, -200]); // Pan the map up by 100 pixels
 });
 var panDownButton = document.createElement('button');
 panDownButton.innerHTML = '<i class="material-icons">arrow_downward</i>';
 panDownButton.title = 'Pan Down';
 panDownButton.className = 'pan-button'; // Add a class for styling
 panDownButton.addEventListener('click', function () {
-    map.panBy([0, 100]); // Pan the map down by 100 pixels
+    map.panBy([0, 200]); // Pan the map down by 100 pixels
 });
 var panLeftButton = document.createElement('button');
 panLeftButton.innerHTML = '<i class="material-icons">arrow_back</i>';
 panLeftButton.title = 'Pan Left';
 panLeftButton.className = 'pan-button'; // Add a class for styling
 panLeftButton.addEventListener('click', function () {
-    map.panBy([-100, 0]); // Pan the map left by 100 pixels
+    map.panBy([-200, 0]); // Pan the map left by 100 pixels
 });
 var panRightButton = document.createElement('button');
 panRightButton.innerHTML = '<i class="material-icons">arrow_forward</i>';
 panRightButton.title = 'Pan Right';
 panRightButton.className = 'pan-button'; // Add a class for styling
 panRightButton.addEventListener('click', function () {
-    map.panBy([100, 0]); // Pan the map right by 100 pixels
+    map.panBy([200, 0]); // Pan the map right by 100 pixels
 });
 // Append the pan buttons to the map container
 panButtons.appendChild(panUpButton);
