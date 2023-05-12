@@ -1,7 +1,7 @@
 var map = L.map('map', {
     dragging: false, // Disable map panning
     zoomControl: false // Disable map zooming
-}).setView([30.221269815941618, -89.7614381551249], 16);
+}).setView([30.221269815941618, -89.7614381551249], 14);
 var wms2019 = L.tileLayer.wms('https://services.geoportalmaps.com/ImageryProxy/api/Proxy/GCT/0/StTammany2019', {
     layers: 'StTammany2019'
     , format: 'image/png'
