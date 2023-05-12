@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <!--    Google Fonts go here-->
@@ -20,7 +21,7 @@
         
         #map {
             position: absolute;
-            top: 10%;
+            top: 12%;
             bottom: 0;
             width: 100%;
             z-index: 1000;
@@ -30,11 +31,10 @@
         .map-title-container {
             position: absolute;
             top: 0;
-            left: 25%;
-            /* Set the left position to 25% */
-            width: 50%;
-            /* Set the width to 50% */
-            height: 50px;
+            left: 10%;
+            right: 10%;
+            width: 80%;
+            height: 12%;
             background-color: white;
             display: flex;
             align-items: center;
@@ -44,16 +44,13 @@
         }
         
         .map-title {
-            font-size: 35px;
-            /*            font-family: 'Bitter', serif;*/
+            font-size: 40px;
             font-family: 'Old Standard TT', serif;
-            /*            font-family: 'Open Sans', sans-serif;*/
-            /*            font-family: 'Oswald', sans-serif;*/
-            padding-top: 35px;
+            text-align: center;
         }
         
         .map-subtitle {
-            font-size: 15px;
+            font-size: 16px;
             font-family: 'Open Sans', sans-serif;
             text-align: center;
             margin-top: -20px;
@@ -63,24 +60,41 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 50px;
+            height: 12%;
+            width: 10%;
             background-color: white;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            padding-left: 10px;
-            padding-top: 28px;
             z-index: 1000;
         }
         
         .logo-image {
-            width: 100px;
-            height: 118px;
+            width: 110px;
+            height: 130px;
+            margin-top: 10%;
+            margin-left: 10%;
         }
         
         .leaflet-control-geocoder.leaflet-bar input[type="text"]::placeholder {
             font-family: "Open Sans", sans-serif;
+        }
+        
+        @media (max-width: 768px) {
+            .map-title-container {
+                top: 10%;
+                height: auto;
+            }
+            .map-title {
+                font-size: 24px;
+            }
+            .map-subtitle {
+                font-size: 12px;
+            }
+            .logo-container {
+                top: 0;
+                padding-top: 5px;
+            }
         }
     </style>
 </head>
