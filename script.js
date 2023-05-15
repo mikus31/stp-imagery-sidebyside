@@ -1,7 +1,14 @@
 var map = L.map('map', {
     dragging: false, // Disable map panning
-    zoomControl: false // Disable map zooming
+    zoomControl: false, // Disable map zooming
+    attributionControl: false
 }).setView([30.221269815941618, -89.7614381551249], 15);
+// Add your custom attribution with hyperlinks
+var additionalAttribution = 'Powered by <a href="https://leafletjs.com/" target="_blank">Leaflet</a> | Map designed by <a href="https://rmichaelmcneil.com/" target="_blank">Michael McNeil</a>, 2023';
+var attributionControl = L.control.attribution({
+    prefix: additionalAttribution
+});
+attributionControl.addTo(map);
 // set up map to remove grid lines from the raster imagery
 (function () {
     var originalInitTile = L.GridLayer.prototype._initTile
