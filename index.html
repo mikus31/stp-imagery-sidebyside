@@ -25,11 +25,13 @@
         
         #map {
             position: absolute;
-            top: 12%;
-            bottom: 0;
-            width: 100%;
+            top: 12.5%;
+            bottom: 1%;
+            left: 2.5%;
+            right: 2.5%;
             z-index: 1000;
             box-sizing: border-box;
+            border: 1px solid black;
         }
         
         .map-title-container {
@@ -54,6 +56,7 @@
             text-align: center;
             border-bottom: 3px solid #FEDD74;
             margin-top: 10px;
+            letter-spacing: 10px;
         }
         
         .map-subtitle {
@@ -62,6 +65,7 @@
             font-family: 'Open Sans', sans-serif;
             text-align: center;
             margin-top: -20px;
+            letter-spacing: 6px;
         }
         
         .logo-container {
@@ -104,6 +108,50 @@
             cursor: pointer;
         }
         
+        .vertical-text-left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 2%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 7px;
+        }
+        
+        .vertical-text-left p {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 30px;
+            letter-spacing: 30px;
+            color: #384C9D;
+            font-family: 'Old Standard TT', serif;
+        }
+        
+        .vertical-text-right {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 2%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 7px;
+        }
+        
+        .vertical-text-right p {
+            writing-mode: vertical-rl;
+            transform: rotate(0deg);
+            font-size: 30px;
+            letter-spacing: 30px;
+            color: #384C9D;
+            font-family: 'Old Standard TT', serif;
+        }
+        
         @media (max-width: 768px) {
             .map-title-container {
                 top: 10%;
@@ -130,6 +178,12 @@
     </div>
     <div class="logo-container">
         <a href="https://stpao.org" target="_blank"> <img src="images/assessor-seal-transparent.png" alt="Assessor Seal" class="logo-image" /> </a>
+    </div>
+    <div class="vertical-text-left">
+        <p>2019</p>
+    </div>
+    <div class="vertical-text-right">
+        <p>2023</p>
     </div>
     <div id="map"> </div>
     <!-- Make sure you put this AFTER Leaflet's CSS -->
