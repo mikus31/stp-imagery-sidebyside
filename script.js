@@ -1,17 +1,31 @@
 var map = L.map('map', {
     dragging: false, // Disable map panning
     zoomControl: false // Disable map zooming
-}).setView([30.221269815941618, -89.7614381551249], 14);
-var wms2019 = L.tileLayer.wms('https://services.geoportalmaps.com/ImageryProxy/api/Proxy/GCT/0/StTammany2019', {
+}).setView([30.221269815941618, -89.7614381551249], 15);
+// set up map to remove grid lines from the raster imagery
+(function () {
+    var originalInitTile = L.GridLayer.prototype._initTile
+    L.GridLayer.include({
+        _initTile: function (tile) {
+            originalInitTile.call(this, tile);
+            var tileSize = this.getTileSize();
+            tile.style.width = tileSize.x + 1 + 'px';
+            tile.style.height = tileSize.y + 1 + 'px';
+        }
+    });
+})()
+var wms2019 = L.tileLayer.wms('https://imagery.geoportalmaps.com/lizardtech/iserv/ows', {
     layers: 'StTammany2019'
-    , format: 'image/png'
+    , format: 'image/jpeg'
     , transparent: true
+    , tileSize: 1024
 });
 wms2019.addTo(map);
-var wms2023 = L.tileLayer.wms('https://services.geoportalmaps.com/ImageryProxy/api/Proxy/GCT/0/StTammany2023', {
+var wms2023 = L.tileLayer.wms('https://imagery.geoportalmaps.com/lizardtech/iserv/ows', {
     layers: 'StTammany2023'
-    , format: 'image/png'
+    , format: 'image/jpeg'
     , transparent: true
+    , tileSize: 1024
 });
 wms2023.addTo(map);
 var sideBySide = L.control.sideBySide(wms2019, wms2023, {
