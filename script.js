@@ -1,7 +1,7 @@
 var map = L.map('map', {
     dragging: false, // Disable map panning
     zoomControl: false, // Disable map zooming
-    attributionControl: false
+    attributionControl: false // turn it off for now so you can customize it below
 }).setView([30.221269815941618, -89.7614381551249], 15);
 // Add your custom attribution with hyperlinks
 var additionalAttribution = 'Powered by <a href="https://leafletjs.com/" target="_blank">Leaflet</a> | Map designed by <a href="https://rmichaelmcneil.com/" target="_blank">Michael McNeil</a>, 2023';
